@@ -1,0 +1,15 @@
+[Unit]
+Description=my exporter program
+After=network.target
+StartLimitIntervalSec=0
+
+[Service]
+Type=simple
+Restart=always
+RestartSec=1
+WorkingDirectory=/opt/mexporter
+EnvironmentFile=/etc/sysconfig/mexporter
+ExecStart=/opt/mexporter/mexporter
+
+[Install]
+WantedBy=multi-user.target
